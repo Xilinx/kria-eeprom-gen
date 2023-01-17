@@ -1,6 +1,6 @@
 ###################################################################################################
-#Description      : This script generates user data file by processing EEPROM bins for K24_SOM, 
-#                   K26_SOM, KV_CC, KR_CC, KD_CC boards
+#Description      : This script generates user data file by processing EEPROM bins for K26_SOM,
+#                   KV_CC, KR_CC
 #Author           : Sharathk
 #Version          : 2.0
 ###################################################################################################
@@ -44,11 +44,6 @@ if ((brdNm == "SM-K26-") or (brdNm == "SMK-K26")):
     shutil.copyfile("./DataFeed/k26_data_ref.py", "./Output/k26_data_read.py")
     filePtrWr = open("./Output/k26_data_read.py", "r+w")
     brd = "K26"
-elif ((brdNm == "SM-K24-") or (brdNm == "SMK-K24")):
-    print("K24 SOM EEPROM")
-    shutil.copyfile("./DataFeed/k24_data_ref.py", "./Output/k24_data_read.py")
-    filePtrWr = open("./Output/k24_data_read.py", "r+w")
-    brd = "K24"
 elif (brdNm == "SCK-KV-"):
     print("KV CC SOM EEPROM")
     shutil.copyfile("./DataFeed/kv_cc_data_ref.py", "./Output/kv_cc_data_read.py")
@@ -59,11 +54,6 @@ elif (brdNm == "SCK-KR-"):
     shutil.copyfile("./DataFeed/kr_cc_data_ref.py", "./Output/kr_cc_data_read.py")
     filePtrWr = open("./Output/kr_cc_data_read.py", "r+w")
     brd = "KRCC"
-elif (brdNm == "SCK-KD-"):
-    print("KD CC SOM EEPROM")
-    shutil.copyfile("./DataFeed/kd_cc_data_ref.py", "./Output/kd_cc_data_read.py")
-    filePtrWr = open("./Output/kd_cc_data_read.py", "r+w")
-    brd = "KDCC"
 else:
     print("Not a valid EEPROM bin")
 
@@ -87,7 +77,7 @@ write_binary_data_to_file(filePtrWr, 0x2, binData, 0x51, 0x30E)
 write_binary_data_to_file(filePtrWr, 0x2, binData, 0x53, 0x338)
 
 if (brd != "KVCC"):
-    if (brd == "K26") or (brd == "K24"):
+    if (brd == "K26"):
         #SOM MAC ID 0
         write_binary_data_to_file(filePtrWr, 0x6, binData, 0x83, 0x363)
         #Primary boot memory
@@ -105,8 +95,3 @@ if (brd != "KVCC"):
         write_binary_data_to_file(filePtrWr, 0x6, binData, 0x89, 0x3A4)
         #KR CC PL MAC ID 1
         write_binary_data_to_file(filePtrWr, 0x6, binData, 0x8F, 0x3DE)
-    if (brd == "KDCC"):
-        #KD CC PL MAC ID 0
-        write_binary_data_to_file(filePtrWr, 0x6, binData, 0x83, 0x36A)
-        #KD CC PL MAC ID 1
-        write_binary_data_to_file(filePtrWr, 0x6, binData, 0x89, 0x3A4)

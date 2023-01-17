@@ -8,7 +8,7 @@
 #Product Info Area
 PRD_INFO_0x04 = "00"
 #Board Manufacturer
-BRD_MANUFACTURER_0x0F = "XILINX"
+BRD_MANUFACTURER_0x0F = "XYZ"
 #Board Product name
 BRD_PRODUCT_0x16 = "SCK-KR-G"             
 #Board Serial number
