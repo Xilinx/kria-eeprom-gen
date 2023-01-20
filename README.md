@@ -5,6 +5,7 @@ Prerequisite:
 	1.Python 2.6.6 tool
 
 Usage: 
+
 	1. gen_eeprom_bin.py is used to generate EEPROM bins for different 
 		Starter kit SOMs and Carrier cards by processing user data
 	2. gen_data_file.py is used to generate user data from EEPROM bins which
