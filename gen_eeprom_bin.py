@@ -1,9 +1,12 @@
-###################################################################################################
-#Description      : This script generates EEPROM Content in alignment to Xilinx_SOM_EEPROM_r7 
-#                   Specification by processing user data for K26_SOM, KV_CC, KR_CC
+#******************************************************************************
+# Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+#
+#Description      : This script generates EEPROM bin Contents
 #Author           : Sharathk
-#Version          : 2.0
-###################################################################################################
+#Version          : 1.0
+#
+#******************************************************************************
 import os
 import sys
 import struct

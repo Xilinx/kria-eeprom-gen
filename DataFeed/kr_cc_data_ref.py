@@ -1,9 +1,12 @@
-###################################################################################################
-#Description      : Data read from EEPROM bin
-#Author           : Sharathk
-#Version          : 2.0
-###################################################################################################
-########################## KR CC Data Read from bin ###############################################
+#******************************************************************************
+# Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+#
+#Description      : KR CC Data Read from EEPROM bin
+#Author           : Sharathk          
+#Version          : 1.0               
+#
+#******************************************************************************
 
 #Product Info Area
 PRD_INFO_0x04 = "00"
