@@ -1,9 +1,12 @@
-###################################################################################################
-#Description      : EEPROM Input data by user
-#Author           : Sharathk
-#Version          : 2.0
-###################################################################################################
-########################## K26 SOM EEPROM Input Data ##############################################
+#******************************************************************************
+# Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# SPDX-License-Identifier: MIT
+#
+#Description      : K26 SOM EEPROM Input Data
+#Author           : Sharathk          
+#Version          : 1.0               
+#
+#******************************************************************************
 
 #Product Info Area
 PRD_INFO_0x04 = "00"

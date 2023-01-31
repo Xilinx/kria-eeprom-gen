@@ -1,4 +1,4 @@
-#SOM EEPROM generation utility
+#Kria EEPROM generation utility
 
 Prerequisite:
 
