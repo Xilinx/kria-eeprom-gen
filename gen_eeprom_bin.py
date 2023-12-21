@@ -4,7 +4,7 @@
 #
 #Description      : This script generates EEPROM bin Contents
 #Author           : Sharathk
-#Version          : 1.0
+#Version          : 3.0
 #
 #******************************************************************************
 import os

@@ -4,7 +4,7 @@
 #
 #Description      : K26 SOM EEPROM Input Data
 #Author           : Sharathk          
-#Version          : 1.0               
+#Version          : 3.0               
 #
 #******************************************************************************
 
@@ -31,7 +31,7 @@ SOM_MAC_ID_0_0x83 = "000000000000"
 #Primary boot memory
 MEM_PRIMARY_0x99 = "QSPI:512Mb"      
 #Secondary boot memory
-MEM_SECONDARY_0xAE = "eMMC:16GB"       
+MEM_SECONDARY_0xAE = "eMMC:None"       
 #SOM PS DDR memory
 MEM_PS_DDR_0xC3 = "PSDDR4:4GB"      
 #SOM PL DDR memory

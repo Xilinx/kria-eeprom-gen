@@ -4,7 +4,7 @@
 #
 #Description      : KR CC Data Read from EEPROM bin
 #Author           : Sharathk          
-#Version          : 1.0               
+#Version          : 3.0               
 #
 #******************************************************************************
 
