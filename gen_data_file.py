@@ -1,11 +1,12 @@
+#!/usr/bin/env python3
 #******************************************************************************
-# Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# Copyright (c) 2023-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 # SPDX-License-Identifier: MIT
 #
 #Description      : This script generates user data file by processing 
 #                   EEPROM bins
 #Author           : Sharathk
-#Version          : 3.0
+#Version          : 4.0
 #
 #******************************************************************************
 import sys
@@ -16,60 +17,60 @@ import shutil
 def write_binary_data_to_file(fp, loop, data, posRd, posWr):
     for i in range(loop):
             fp.seek(posWr+i*2)
-            fp.write(data[posRd+i].encode("hex"))
+            fp.write(str(format(data[posRd+i], '02x')))
 
 def write_ascii_data_to_file(fp, loop, data, posRd, posWr):
     for i in range(loop):
-        if (ord(data[posRd+i]) is 0 or ord(data[posRd+i]) is 0x20):
+        if ((data[posRd+i] == 0) or (data[posRd+i] == 0x20)):
             fp.seek(posWr+i)
             fp.write('"')
             break
         else:
             fp.seek(posWr+i)
-            fp.write(data[posRd+i])
+            fp.write(chr(data[posRd+i]))
             if i == loop-1:
                 fp.write('"')
 
-def strngConv(num):
-    strn = ""
-    for x in range(num):
-        strn += binData[x+22]
-    return strn
-
 if not os.path.exists("Output"):
     os.makedirs("Output")
+
+if len(sys.argv) == 1:
+   print('Pass eeprom bin file to process')
+   sys.exit()
+
 filePtrRd = open(sys.argv[1], "r+b")
 binData = filePtrRd.read()
 
-brdNm = strngConv(7)
+brdNm = str(binData[22:29], 'utf-8')
 brd=""
 if ((brdNm == "SM-K26-") or (brdNm == "SMK-K26")):
     print("K26 SOM EEPROM")
     shutil.copyfile("./DataFeed/k26_data_ref.py", "./Output/k26_data_read.py")
-    filePtrWr = open("./Output/k26_data_read.py", "r+w")
+    filePtrWr = open("./Output/k26_data_read.py", "r+")
     brd = "K26"
 elif ((brdNm == "SM-K24-") or (brdNm == "SMK-K24")):
     print("K24 SOM EEPROM")
     shutil.copyfile("./DataFeed/k24_data_ref.py", "./Output/k24_data_read.py")
-    filePtrWr = open("./Output/k24_data_read.py", "r+w")
+    filePtrWr = open("./Output/k24_data_read.py", "r+")
     brd = "K24"
 elif (brdNm == "SCK-KV-"):
     print("KV CC SOM EEPROM")
     shutil.copyfile("./DataFeed/kv_cc_data_ref.py", "./Output/kv_cc_data_read.py")
-    filePtrWr = open("./Output/kv_cc_data_read.py", "r+w")
+    filePtrWr = open("./Output/kv_cc_data_read.py", "r+")
     brd = "KVCC"
 elif (brdNm == "SCK-KR-"):
     print("KR CC SOM EEPROM")
     shutil.copyfile("./DataFeed/kr_cc_data_ref.py", "./Output/kr_cc_data_read.py")
-    filePtrWr = open("./Output/kr_cc_data_read.py", "r+w")
+    filePtrWr = open("./Output/kr_cc_data_read.py", "r+")
     brd = "KRCC"
 elif (brdNm == "SCK-KD-"):
     print("KD CC SOM EEPROM")
     shutil.copyfile("./DataFeed/kd_cc_data_ref.py", "./Output/kd_cc_data_read.py")
-    filePtrWr = open("./Output/kd_cc_data_read.py", "r+w")
+    filePtrWr = open("./Output/kd_cc_data_read.py", "r+")
     brd = "KDCC"
 else:
     print("Not a valid EEPROM bin")
+    exit()
 
 #Product Info Area
 write_binary_data_to_file(filePtrWr, 0x1, binData, 0x4, 0x1BC)

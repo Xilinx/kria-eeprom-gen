@@ -2,7 +2,7 @@
 
 Prerequisite:
 
-	1.Python 2.6.6 tool
+	Python tool version: 3.10.12 
 
 Usage: 
 

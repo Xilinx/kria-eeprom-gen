@@ -1,10 +1,10 @@
 #******************************************************************************
-# Copyright (c) 2023 Advanced Micro Devices, Inc. All Rights Reserved.
+# Copyright (c) 2023-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 # SPDX-License-Identifier: MIT
 #
 #Description      : KR CC Data Read from EEPROM bin
-#Author           : Sharathk          
-#Version          : 3.0               
+#Author           : Sharathk        
+#Version          : 4.0            
 #
 #******************************************************************************
 
