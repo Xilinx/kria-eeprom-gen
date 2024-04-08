@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: MIT
 #
 #Description      : KD CC EEPROM Input Data
-#Author           : Sharathk          
-#Version          : 4.0               
+#Author           : Sharathk
+#Version          : 4.0
 #
 #******************************************************************************
 
@@ -13,13 +13,13 @@ PRD_INFO_0x04 = "00"
 #Board Manufacturer
 BRD_MANUFACTURER_0x0F = "XILINX"
 #Board Product name
-BRD_PRODUCT_0x16 = "SCK-KD-G"             
+BRD_PRODUCT_0x16 = "SCK-KD-G"
 #Board Serial number
-BRD_SERIAL_0x27 = "XFL1K3FVBE03"        
+BRD_SERIAL_0x27 = "XFL1K3FVBE03"
 #Board Part number
 BRD_PART_0x38 = "5066-01"
 #Revision Number
-REV_NUM_0x44 = "1"           
+REV_NUM_0x44 = "1"
 #Device ID
 DEV_ID_0x4F = "0000"
 #Sub Vendor ID

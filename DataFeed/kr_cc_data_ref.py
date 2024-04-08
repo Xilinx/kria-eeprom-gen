@@ -3,34 +3,34 @@
 # SPDX-License-Identifier: MIT
 #
 #Description      : KR CC Data Read from EEPROM bin
-#Author           : Sharathk        
-#Version          : 4.0            
+#Author           : Sharathk             
+#Version          : 4.0                  
 #
 #******************************************************************************
 
 #Product Info Area
 PRD_INFO_0x04 = "00"
-#Board Manufacturer
-BRD_MANUFACTURER_0x0F = "      
-#Board Product name
+#Board Manufacturer  
+BRD_MANUFACTURER_0x0F = "       
+#Board Product name 
 BRD_PRODUCT_0x16 = "                
-#Board Serial number
+#Board Serial number  
 BRD_SERIAL_0x27 = "                
-#Board Part number
+#Board Part number  
 BRD_PART_0x38 = "         
-#Revision Number
+#Revision Number  
 REV_NUM_0x44 = "        
-#Device ID
+#Device ID  
 DEV_ID_0x4F = "0000"
-#Sub Vendor ID
+#Sub Vendor ID  
 SUB_VEN_ID_0x51 = "0000"
-#Sub Device ID
+#Sub Device ID  
 SUB_DEV_ID_0x53 = "0000"
-#KR CC PS MAC ID 1
+#KR CC PS MAC ID 1  
 KR_PS_MAC_ID_1_0x83 = "000000000000"
-#KR CC PL MAC ID 0
+#KR CC PL MAC ID 0  
 KR_PL_MAC_ID_0_0x89 = "000000000000"
-#KR CC PL MAC ID 1
+#KR CC PL MAC ID 1  
 KR_PL_MAC_ID_1_0x8F = "000000000000"
 
 ###################################################################################################

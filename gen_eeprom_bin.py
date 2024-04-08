@@ -102,7 +102,7 @@ else:
 #Table: 4, SOM & CC Common Header and Board Area
 #Common Header (8 Bytes)
 print('Writing Common Header Area...')
-write_to_bin_file(filePtr, struct.pack(">B", int(PRD_INFO_0x04)), 0x4, 1)
+write_to_bin_file(filePtr, struct.pack(">B", int(PRD_INFO_0x04, 16)), 0x4, 1)
 write_to_bin_file(filePtr, struct.pack("B", calc_checksum(filePtr, 0x7, 0x0)),0x7, 1)
 #Board Area(96 or 72 Bytes)
 print('Writing Board Area...')
@@ -113,9 +113,9 @@ if sel == 1 or sel == 2:
 write_to_bin_file(filePtr, str.encode(BRD_SERIAL_0x27), 0x27, 16)
 write_to_bin_file(filePtr, str.encode(BRD_PART_0x38), 0x38, 9)
 write_to_bin_file(filePtr, str.encode(REV_NUM_0x44), 0x44, 8)
-write_to_bin_file(filePtr, struct.pack(">H", int(DEV_ID_0x4F)), 0x4F, 2)
-write_to_bin_file(filePtr, struct.pack(">H", int(SUB_VEN_ID_0x51)), 0x51, 2)
-write_to_bin_file(filePtr, struct.pack(">H", int(SUB_DEV_ID_0x53)), 0x53, 2)
+write_to_bin_file(filePtr, struct.pack(">H", int(DEV_ID_0x4F, 16)), 0x4F, 2)
+write_to_bin_file(filePtr, struct.pack(">H", int(SUB_VEN_ID_0x51, 16)), 0x51, 2)
+write_to_bin_file(filePtr, struct.pack(">H", int(SUB_DEV_ID_0x53, 16)), 0x53, 2)
 calc_uuid4(filePtr,0x56)
 write_to_bin_file(filePtr, struct.pack("B", calc_checksum(filePtr, 0x5F, 0x8)),0x67, 1)
 
